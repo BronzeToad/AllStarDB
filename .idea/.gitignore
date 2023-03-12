@@ -6,5 +6,3 @@
 /dataSources.local.xml
 # Zeppelin ignored files
 /ZeppelinRemoteNotebooks/
-
-.DS_Store
