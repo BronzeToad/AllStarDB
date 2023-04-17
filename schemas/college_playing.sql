@@ -1,13 +1,13 @@
--- drop table baseball_databank.college_playing;
-create table if not exists baseball_databank.college_playing
+-- drop table college_playing;
+create table if not exists college_playing
 (
-    player_id varchar(64) not null primary key,
+    college_playing_pk uuid not null primary key,
+    player_id varchar(16) not null,
     school_id varchar(64) not null,
     year_id integer not null
 );
 
-alter table baseball_databank.college_playing owner to ajp;
-
-create index idx_player_id on baseball_databank.college_playing (player_id);
-create index idx_school_id on baseball_databank.college_playing (school_id);
-create index idx_year_id on baseball_databank.college_playing (year_id);
+create index idx_college_playing on college_playing (college_playing_pk);
+create index idx_player_id on college_playing (player_id);
+create index idx_school_id on college_playing (school_id);
+create index idx_year_id on college_playing (year_id);

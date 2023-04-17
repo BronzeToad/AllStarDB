@@ -1,13 +1,13 @@
--- drop table baseball_databank.schools;
-create table if not exists baseball_databank.schools
+-- drop table schools;
+create table if not exists schools
 (
-    school_id varchar(64) not null primary key,
+    school_pk uuid not null primary key,
+    school_id varchar(64) not null,
     school_name varchar(64),
     city varchar(64),
-    state char(2),
-    country varchar(8)
+    state varchar(16),
+    country varchar(16)
 );
 
-alter table baseball_databank.schools owner to ajp;
-
-create index idx_school_id on baseball_databank.schools (school_id);
+create index idx_schools on schools (school_pk);
+create index idx_school_id on schools (school_id);

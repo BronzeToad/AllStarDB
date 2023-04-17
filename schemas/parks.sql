@@ -1,14 +1,14 @@
--- drop table baseball_databank.parks;
-create table if not exists baseball_databank.parks
+-- drop table parks;
+create table if not exists parks
 (
-    park_id char(5) not null primary key,
+    park_pk uuid not null primary key,
+    park_id char(5) not null,
     park_name varchar(64),
     park_alias varchar(64),
     city varchar(64),
     state char(2),
-    country varchar(8)
+    country varchar(16)
 );
 
-alter table baseball_databank.parks owner to ajp;
-
-create index idx_park_id on baseball_databank.parks (park_id);
+create index idx_parks on parks (park_pk);
+create index idx_park_id on parks (park_id);

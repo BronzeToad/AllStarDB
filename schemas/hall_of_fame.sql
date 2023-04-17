@@ -1,9 +1,10 @@
--- drop table baseball_databank.hall_of_fame;
-create table if not exists baseball_databank.hall_of_fame
+-- drop table hall_of_fame;
+create table if not exists hall_of_fame
 (
-    player_id varchar(64) not null primary key,
+    hall_of_fame_pk uuid not null primary key,
+    player_id varchar(16) not null,
     year_id integer not null,
-    voted_by varchar(64),
+    voted_by varchar(16),
     ballots_cast integer,
     votes_required integer,
     votes_received integer,
@@ -12,7 +13,6 @@ create table if not exists baseball_databank.hall_of_fame
     notes varchar(255)
 );
 
-alter table baseball_databank.hall_of_fame owner to ajp;
-
-create index idx_player_id on baseball_databank.hall_of_fame (player_id);
-create index idx_year_id on baseball_databank.hall_of_fame (year_id);
+create index idx_hall_of_fame on hall_of_fame (hall_of_fame_pk);
+create index idx_player_id on hall_of_fame (player_id);
+create index idx_year_id on hall_of_fame (year_id);

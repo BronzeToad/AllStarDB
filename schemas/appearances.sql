@@ -1,7 +1,8 @@
--- drop table baseball_databank.appearances;
-create table if not exists baseball_databank.appearances
+-- drop table appearances;
+create table if not exists appearances
 (
-    appearances_id varchar(64) not null primary key,
+    appearance_pk uuid not null primary key,
+    appearances_id varchar(64) not null,
     year_id integer not null,
     team_id char(3) not null,
     league_id char(2),
@@ -25,6 +26,7 @@ create table if not exists baseball_databank.appearances
     games_pinch_runner integer
 );
 
-create index idx_appearances_id on baseball_databank.appearances (appearances_id);
-create index idx_year_id on baseball_databank.appearances (year_id);
-create index idx_player_id on baseball_databank.appearances (player_id);
+create index idx_appearances on appearances (appearance_pk);
+create index idx_appearances_id on appearances (appearances_id);
+create index idx_year_id on appearances (year_id);
+create index idx_player_id on appearances (player_id);

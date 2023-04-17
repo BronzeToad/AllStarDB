@@ -1,11 +1,12 @@
--- drop table baseball_databank.batting_post;
-create table if not exists baseball_databank.batting_post
+-- drop table batting_post;
+create table if not exists batting_post
 (
-    year_id integer not null primary key,
-    playoff_round varchar(8) not null,
-    player_id varchar(64) not null,
-    team_id varchar(8) not null,
-    league_id varchar(8),
+    batting_post_pk uuid not null primary key,
+    year_id integer not null,
+    playoff_round varchar(8),
+    player_id varchar(16) not null,
+    team_id char(3) not null,
+    league_id char(2),
     games_played_batting integer,
     at_bats integer,
     runs integer,
@@ -25,8 +26,7 @@ create table if not exists baseball_databank.batting_post
     grounded_into_double_plays integer
 );
 
-alter table baseball_databank.batting_post owner to ajp;
-
-create index idx_year_id on baseball_databank.batting_post (year_id);
-create index idx_player_id on baseball_databank.batting_post (player_id);
-create index idx_team_id on baseball_databank.batting_post (team_id);
+create index idx_batting_post on batting_post (batting_post_pk);
+create index idx_year_id on batting_post (year_id);
+create index idx_player_id on batting_post (player_id);
+create index idx_team_id on batting_post (team_id);

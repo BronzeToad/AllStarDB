@@ -1,7 +1,8 @@
--- drop table baseball_databank.series_post;
-create table if not exists baseball_databank.series_post
+-- drop table series_post;
+create table if not exists series_post
 (
-    year_id integer not null primary key,
+    series_post_pk uuid not null primary key,
+    year_id integer not null,
     playoff_round varchar(8),
     winner_team_id char(3),
     winner_league_id char(2),
@@ -12,6 +13,5 @@ create table if not exists baseball_databank.series_post
     tie_games integer
 );
 
-alter table baseball_databank.series_post owner to ajp;
-
-create index idx_year_id on baseball_databank.series_post (year_id);
+create index idx_series_post on series_post (series_post_pk);
+create index idx_year_id on series_post (year_id);
