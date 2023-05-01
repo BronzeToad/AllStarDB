@@ -2,10 +2,10 @@
 create table if not exists dim_positions
 (
     position_pk uuid not null primary key,
-    position_nbr integer not null,
-    position_id varchar(64) not null,       -- TODO: check lengths and switch to char type
+    position_id char(2) not null,
     position_type positiontype not null,
-    position_name varchar(64) not null,     -- TODO: check max length
+    position_name varchar(16) not null,
+    position_nbr decimal(1,0),
     created timestamptz not null,
     updated timestamptz not null
 );
