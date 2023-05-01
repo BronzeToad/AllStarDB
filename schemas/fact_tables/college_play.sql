@@ -4,7 +4,7 @@ create table if not exists college_play
     college_play_pk uuid not null primary key,
     person_fk uuid not null,
     school_fk uuid not null,
-    year integer not null,
+    year decimal(4,0) not null,
     created timestamptz not null,
     updated timestamptz not null
 );

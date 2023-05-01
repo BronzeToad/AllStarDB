@@ -3,7 +3,7 @@ create table if not exists postseason_series
 (
     postseason_series_pk uuid not null primary key,
     postseason_fk uuid not null,
-    year integer not null,
+    year decimal(4,0) not null,
     winner_team_fk uuid not null,
     loser_team_fk uuid not null,
     wins integer,

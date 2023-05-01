@@ -4,7 +4,7 @@ create table if not exists fielding_stats_postseason
     fielding_stats_post_pk uuid not null primary key,
     person_fk uuid not null,
     team_fk uuid not null,
-    year integer not null,
+    year decimal(4,0) not null,
     position_fk uuid not null,
     postseason_fk uuid not null,
     games_played integer,

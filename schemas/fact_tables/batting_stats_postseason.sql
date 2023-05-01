@@ -4,7 +4,7 @@ create table if not exists batting_stats_postseason
     batting_stats_post_pk uuid not null primary key,
     person_fk uuid not null,
     team_fk uuid not null,
-    year integer not null,
+    year decimal(4,0) not null,
     postseason_fk uuid not null,
     games_played integer,
     at_bats integer,

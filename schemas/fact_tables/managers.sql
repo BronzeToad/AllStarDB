@@ -4,7 +4,7 @@ create table if not exists managers
     managers_pk uuid not null primary key,
     person_fk uuid not null,
     team_fk uuid not null,
-    year integer not null,
+    year decimal(4,0) not null,
     games_managed integer,
     wins integer,
     losses integer,

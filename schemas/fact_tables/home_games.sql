@@ -3,7 +3,7 @@ create table if not exists home_games
 (
     home_games_pk uuid not null primary key,
     team_fk uuid not null,
-    year integer not null,
+    year decimal(4,0) not null,
     span_start_date date not null,
     span_end_date date,
     games_played integer,

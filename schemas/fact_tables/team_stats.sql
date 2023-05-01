@@ -3,7 +3,7 @@ create table if not exists team_stats
 (
     team_stats_pk uuid not null primary key,
     team_fk uuid not null,
-    year integer not null,
+    year decimal(4,0) not null,
     rank integer,
     home_games_played integer,
     division_winner boolean,
