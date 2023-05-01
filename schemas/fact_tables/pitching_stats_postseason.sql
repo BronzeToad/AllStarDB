@@ -4,7 +4,7 @@ create table if not exists pitching_stats_postseason
     pitching_stats_post_pk uuid not null primary key,
     person_fk uuid not null,
     team_fk uuid not null,
-    year integer not null,
+    year decimal(4,0) not null,
     postseason_fk uuid not null,
     wins integer,
     loses integer,
@@ -21,7 +21,7 @@ create table if not exists pitching_stats_postseason
     walks integer,
     strikeouts integer,
     batting_avg_opponent decimal(4,3),
-    earned_run_avg decimal(4,2),    -- TODO: check max value
+    earned_run_avg decimal(5,2),
     intentional_walks integer,
     wild_pitches integer,
     hit_by_pitch integer,

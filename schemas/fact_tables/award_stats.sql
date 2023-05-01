@@ -5,7 +5,7 @@ create table if not exists award_stats
     award_fk uuid not null,
     person_fk uuid not null,
     league_fk uuid not null,
-    year integer not null,
+    year decimal(4,0) not null,
     points_received integer,
     points_possible integer,
     first_place_votes integer,
