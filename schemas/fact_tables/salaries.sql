@@ -2,8 +2,10 @@
 create table if not exists salaries
 (
     salaries_pk uuid not null primary key,
-
-
+    person_fk uuid not null,
+    team_fk uuid not null,
+    year integer not null,
+    salary integer,
     created timestamptz not null,
     updated timestamptz not null
 );

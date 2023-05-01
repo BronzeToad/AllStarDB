@@ -2,8 +2,13 @@
 create table if not exists all_star_rosters
 (
     all_star_rosters_pk uuid not null primary key,
-
-
+    person_fk uuid not null,
+    team_fk uuid not null,
+    year integer not null,
+    game_number integer,
+    game_id varchar(64),
+    played_in_game boolean,
+    position_fk uuid,
     created timestamptz not null,
     updated timestamptz not null
 );
