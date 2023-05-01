@@ -6,7 +6,7 @@ create table if not exists all_star_rosters
     team_fk uuid not null,
     year integer not null,
     game_number integer,
-    game_id varchar(64),
+    game_id varchar(64),        -- TODO: check lengths and switch to char type
     played_in_game boolean,
     position_fk uuid,
     created timestamptz not null,

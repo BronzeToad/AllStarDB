@@ -6,6 +6,7 @@ create table if not exists salaries
     team_fk uuid not null,
     year integer not null,
     salary integer,
+    currency_type currencytype,
     created timestamptz not null,
     updated timestamptz not null
 );
