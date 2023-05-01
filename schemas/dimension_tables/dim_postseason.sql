@@ -2,8 +2,8 @@
 create table if not exists dim_postseason
 (
     postseason_pk uuid not null primary key,
-
-
+    round_id varchar(64) not null,
+    round_name varchar(64) not null,
     created timestamptz not null,
     updated timestamptz not null
 );

@@ -3,4 +3,6 @@ create database baseball_db with owner bronzetoad;
 create schema baseball_databank;
 alter schema baseball_databank owner to bronzetoad;
 
--- create type blahblah as enum ('regular', 'preseason', 'postseason');
+create type awardtype as enum ('player', 'manager', 'unknown');
+create type positiontype as enum ('pitcher', 'catcher', 'infield', 'outfield', 'special', 'unknown');
+create type handedness as enum ('left', 'right', 'switch', 'unknown');
